@@ -1,0 +1,252 @@
+:root {
+  --clr-blue: rgb(88 71 235);
+  --clr-light-red-work: rgb(255 140 100);
+  --clr-soft-blue-play: rgb(86 194 230);
+  --clr-light-red-study: rgb(255 92 124);
+  --clr-lime-green-exercise: rgb(74 207 129);
+  --clr-violet-social: rgb(117 54 211);
+  --clr-soft-orange-selfcare: rgb(241 198 91);
+
+  --clr-very-dark-blue: rgb(15 20 36);
+  --clr-dark-blue: rgb(28 31 74);
+  --clr-dark-blue-med: rgb(51 56 122);
+  --clr-desaturated-blue: rgb(111 118 200);
+  --clr-pale-blue: rgb(189 193 255);
+
+  --clr-white: rgb(255 255 255);
+  --clr-black: rgb(0 0 0);
+
+  --fs-h1: 2.75rem;
+  --fs-h1-mobile: 1.5rem;
+  --fs-h2: 1rem;
+  --fs-h3: 3.25rem;
+  --fs-p: 0.8rem;
+
+  --ff-primary: "Rubik", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h3 {
+  font-weight: var(--fw-light);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  font-size: var(--fs-p);
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  background-color: var(--clr-very-dark-blue);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-color--work {
+  background-color: var(--clr-light-red-work);
+}
+.bg-color--play {
+  background-color: var(--clr-soft-blue-play);
+}
+.bg-color--study {
+  background-color: var(--clr-light-red-study);
+}
+.bg-color--exercise {
+  background-color: var(--clr-lime-green-exercise);
+}
+.bg-color--social {
+  background-color: var(--clr-violet-social);
+}
+.bg-color--selfcare {
+  background-color: var(--clr-soft-orange-selfcare);
+}
+.bg-color--darkblue {
+  background-color: var(--clr-dark-blue);
+}
+.bg-color--blue {
+  background-color: var(--clr-blue);
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  width: 80%;
+  display: grid;
+  gap: 1.5em;
+}
+
+.card {
+  border-radius: 0.8em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__background {
+  text-align: right;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.card__background img {
+  margin-right: 1em;
+  max-width: 25%;
+}
+
+.card__content,
+.card__nav {
+  padding: 1.5em;
+  border-radius: 0.8em;
+}
+
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content__header h2 {
+  color: var(--clr-white);
+}
+
+.content__main h3,
+.content__main h1 {
+  color: var(--clr-white);
+}
+
+.content__main p,
+.card__nav li:not(.active) {
+  color: var(--clr-pale-blue);
+}
+
+.card__nav li {
+  margin-bottom: 0.75em;
+}
+
+.card__content .avatar img {
+  max-width: 30%;
+  border: 2px solid var(--clr-white);
+  border-radius: 50%;
+  margin-bottom: 1.5em;
+}
+
+.card__content .content__header svg {
+  fill: #bbc0ff;
+}
+.card__content .content__header svg:hover,
+.card__content:not(.bg-color--blue):hover,
+.card__nav li:hover {
+  cursor: pointer;
+}
+
+.card__content .content__header svg:hover {
+  fill: #fff;
+}
+.card__content:not(.bg-color--blue):hover {
+  background-color: var(--clr-dark-blue-med);
+}
+.card__nav li:hover {
+  color: var(--clr-white);
+}
+
+.active {
+  color: var(--clr-white);
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .profile-card {
+    grid-row: span 2;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1079px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .profile-card {
+    grid-row: span 3;
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    height: auto;
+  }
+
+  h1 {
+    font-size: var(--fs-h1-mobile);
+  }
+
+  .profile-card .card__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-card .card__content .avatar {
+    text-align: center;
+    width: 25%;
+  }
+
+  .profile-card .card__content .avatar img {
+    min-width: 40px;
+    margin-bottom: 0;
+  }
+
+  .card__nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}
