@@ -139,7 +139,7 @@ main {
 
 .card__background img {
   margin-right: 1em;
-  max-width: 25%;
+  max-width: 30%;
 }
 
 .card__content,
@@ -152,6 +152,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.25em;
 }
 
 .content__header h2 {
