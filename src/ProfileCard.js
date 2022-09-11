@@ -9,7 +9,7 @@ const ProfileCard = () => {
           <img src="/image-jeremy.png" alt="profile avatar" />
         </div>
 
-        <div className="content__main">
+        <div className="profile-content__main">
           <p>Report for</p>
           <h1>Jeremy Robson</h1>
         </div>

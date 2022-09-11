@@ -160,11 +160,12 @@ main {
 }
 
 .content__main h3,
-.content__main h1 {
+.profile-content__main h1 {
   color: var(--clr-white);
 }
 
 .content__main p,
+.profile-content__main,
 .card__nav li:not(.active) {
   color: var(--clr-pale-blue);
 }
@@ -249,5 +250,11 @@ main {
   .card__nav ul {
     display: flex;
     justify-content: space-around;
+  }
+
+  .content__main {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
   }
 }
